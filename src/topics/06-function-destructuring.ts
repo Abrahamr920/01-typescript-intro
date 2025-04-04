@@ -8,19 +8,6 @@ export interface TaxCalculationOptions {
   products: Product[];
 }
 
-const phone: Product = {
-  description: "Nokia A1",
-  price: 100,
-};
-const tablet: Product = {
-  description: "iPad Air",
-  price: 200,
-};
-const laptop: Product = {
-  description: "MacBook Pro",
-  price: 300,
-};
-
 export function taxCalculation(
   options: TaxCalculationOptions
 ): [number, number] {
@@ -33,16 +20,29 @@ export function taxCalculation(
   return [total, total * tax];
 }
 
-const shoppingCart: Product[] = [phone, tablet, laptop];
+// const phone: Product = {
+//   description: "Nokia A1",
+//   price: 100,
+// };
+// const tablet: Product = {
+//   description: "iPad Air",
+//   price: 200,
+// };
+// const laptop: Product = {
+//   description: "MacBook Pro",
+//   price: 300,
+// };
 
-const tax = 0.15;
+// // const shoppingCart: Product[] = [phone, tablet, laptop];
 
-const result = taxCalculation({
-  tax,
-  products: shoppingCart,
-});
+// // const tax = 0.15;
 
-const [total, taxValue] = result;
+// const result = taxCalculation({
+//   tax,
+//   products: shoppingCart,
+// });
+
+// const [total, taxValue] = result;
 
 // console.log("Total: ", total);
 // console.log("Tax: ", taxValue);
