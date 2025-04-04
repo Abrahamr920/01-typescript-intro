@@ -1,6 +1,13 @@
-function classDecorator() {}
+function classDecorator<T extends { new (...args: any[]): {} }>(
+  constructor: T
+) {
+  return class extends constructor {
+    newProperty = "newProperty";
+    hello = "Override";
+  };
+}
 
-// @classDecorator
+@classDecorator
 export class SuperClass {
   public myProperty: string = "ABC123";
   print() {
